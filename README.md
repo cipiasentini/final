@@ -2,11 +2,11 @@
 
 ### Autores
 
-Alarcón, Facundo
-Piasentini, Carlos Iván
-Sarquis Boutros, Héctor
+- Alarcón, Facundo
+- Piasentini, Carlos Iván
+- Sarquis Boutros, Héctor
 
-License
+Licencia
 ----
 
 MIT
