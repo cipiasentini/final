@@ -1,9 +1,59 @@
 const electron = require('electron')
+const {Menu} = require('electron')
 const app = electron.app
 const BrowserWindow = electron.BrowserWindow
 const path = require('path')
 
 let mainWindow = null
+
+// Barra de menues
+const template = [
+  {
+    label: 'view',
+    submenu: [
+      {role: 'reload'},
+      {role: 'forcereload'},
+      {type: 'separator'},
+      {role: 'resetzoom'},
+      {role: 'zoomin'},
+      {role: 'zoomout'},
+      {type: 'separator'},
+      {role: 'togglefullscreen'}
+    ]
+  },
+  {
+    role: 'window',
+    submenu: [
+      {role: 'minimize'},
+      {role: 'close'}
+    ]
+  },
+  {
+    role: 'help',
+    submenu: [
+      {
+        label: 'Documentación',
+        click () {
+          let child = new BrowserWindow({parent: mainWindow, modal: false, show: false, width: 800, height: 800,})
+          child.loadURL(require('url').format({
+            pathname: path.join(__dirname, 'guia.html'),
+            protocol: 'file:',
+            slashes: true
+          }))
+          child.once('ready-to-show', () => {
+            child.show()
+          })
+        }
+      },
+      {
+        label: 'Acerca de',
+        click () { require('electron').shell.openExternal('https://github.com/cipiasentini/final') }
+      }
+    ]
+  }
+]
+
+// Pantalla principal
 const createWindow = () => {
   mainWindow = new BrowserWindow({
     center: true, icon: path.join(__dirname, 'logo.png'),
@@ -19,6 +69,8 @@ const createWindow = () => {
   mainWindow.on('closed', () => {
     mainWindow = null
   })
+  const menu = Menu.buildFromTemplate(template)
+  Menu.setApplicationMenu(menu)
 }
 
 app.on('ready', createWindow)
