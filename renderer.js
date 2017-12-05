@@ -46,6 +46,22 @@ $('#info').popover()
 $('#info2').popover()
 $('#info3').popover()
 
+// Para ir arriba automaticamente al clickear Procesar$(document).ready(function(){
+$(document).ready(function(){
+  $('.ir-arriba').click(function(){
+  	$('body, html').animate({
+  		scrollTop: '0px'
+  	}, 300)
+  })
+  $(window).scroll(function(){
+  	if( $(this).scrollTop() >= 0 ){
+  		$('.ir-arriba').slideDown(300)
+  	} else {
+  		$('.ir-arriba').slideUp(300)
+  	}
+  })
+})
+
 // para poder quitar las advertencias en caso de ingresar mal valores de supp y conf
 pagina.addEventListener('click', (err) => {
   try {
