@@ -1,3 +1,3 @@
 # Reglas de asociación
 
-![RA](https://i.imgur.com/BGCvCDp.png){:height="36px" width="36px"}
+<img src="https://i.imgur.com/BGCvCDp.png" width="48px" height="48px">
