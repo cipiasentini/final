@@ -390,7 +390,7 @@ def filtroElementos(reglas, elementos):
     return [filtro,noExiste]
 
 '''Funcion que genera el archivo con los resultados'''
-def resultadosg(reglas, minSup, minConf, nombre, elementos, noExiste):
+def resultados(reglas, minSup, minConf, nombre, elementos, noExiste):
     archivo = open(nombre,'w') # para generar el archivo
     archivo.write('------------------------ RESULTADOS ---------------------------\n')
     archivo.write('\n--- Minimo Soporte: '+ minSup)
@@ -401,10 +401,10 @@ def resultadosg(reglas, minSup, minConf, nombre, elementos, noExiste):
         archivo.write('Elementos Buscados: '+str(elementos)+ '\n\n')
         if len(noExiste) != 0:
             archivo.write('Aviso: no se encontraron reglas con los elementos: '+str(noExiste)+'\n\n')
-    archivo.write('---------------------------- REGLAS ------------------------------\n')
+    archivo.write('Se generaron: ' + str(len(reglas)) + ' reglas\n\n')
+    archivo.write('---------------------------- REGLAS ------------------------------\n\n')
     archivo.write('Regla #: antecedente --> consecuente        soporte - confianza\n')
     archivo.write('\n')
-    archivo.write('Se generaron: ' + str(len(reglas)) + ' reglas\n\n')
     i = 1
     for regla in reglas:
         pre = regla[0]
@@ -443,4 +443,4 @@ def inicio(ds, sup, conf, longRule, rulesOfElements, repetidos):
         filtro = filtroElementos(r, elementos)
         r = filtro[0]
         noExiste = filtro[1]
-    return resultadosg(r, str(sup), str(conf), 'reglas.txt', elementos, noExiste)
+    return resultados(r, str(sup), str(conf), 'reglas.txt', elementos, noExiste)
