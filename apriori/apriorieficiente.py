@@ -436,7 +436,7 @@ def inicio(ds, sup, conf, longRule, rulesOfElements, repetidos):
     # se generan los itemsets frecuentes y se agregan a un diccionario
     ff = apriori(dset, float(sup), float(conf), int(longRule), ms)
     n = len(dset)
-    # se generan una lista que contiene las reglas, donde el formato de cada regla es [[antecedente/s], [consecuentes], soporte, confianza]
+    # se generan una lista que contiene las reglas, donde el formato de cada regla es [[antecedente/s], [consecuente/s], soporte, confianza]
     r = genRules(ff, float(conf), n)
     # ordeno de mayor a menor por confianza, soporte y tambien de menor a mayor por longitud de regla
     r.sort(key=lambda x:(x[2], x[3], -len(x[0]), -len(x[1])), reverse=True)
