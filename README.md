@@ -2,9 +2,7 @@
 
 ### Autores
 
-- Alarcón, Facundo
 - Piasentini, Carlos Iván
-- Sarquis Boutros, Héctor
 
 Licencia
 ----
