@@ -3,3 +3,5 @@ env
 build
 aprioriDistribucion
 apriori-linux-x64
+server.spec
+*.pyc
