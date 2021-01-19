@@ -7,11 +7,11 @@
   },
   "dependencies": {
     "bootstrap": "git+https://github.com/cipiasentini/dependencia2.git",
-    "jquery": "^3.2.1",
+    "jquery": "^3.5.1",
     "zerorpc": "git+https://github.com/cipiasentini/dependencia1.git"
   },
   "devDependencies": {
-    "electron": "^1.7.9",
-    "electron-packager": "^9.0.1"
+    "electron": "^1.8.8",
+    "electron-packager": "^15.2.0"
   }
 }
