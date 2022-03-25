@@ -11,7 +11,7 @@
     "zerorpc": "git+https://github.com/cipiasentini/dependencia1.git"
   },
   "devDependencies": {
-    "electron": "^1.8.8",
+    "electron": "^13.6.6",
     "electron-packager": "^15.2.0"
   }
 }
